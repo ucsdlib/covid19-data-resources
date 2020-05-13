@@ -1,0 +1,816 @@
+      <!DOCTYPE html>
+      <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>covid19-data-resources</title>
+            <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); background-color: rgb(40, 44, 52); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); border-image: initial; background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; overflow-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.04); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { overflow-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; overflow-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.markdown-preview pre.editor-colors { user-select: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item input[type="checkbox"] { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.markdown-preview .task-list-item { list-style-type: none; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: #abb2bf;
+  background-color: #3a3f4b;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #3a3f4b;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #e5c07b;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string > .syntax--source,
+.syntax--string .syntax--embedded {
+  color: #abb2bf;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: white !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--source.syntax--embedded.syntax--source {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--constant.syntax--language,
+.syntax--source.syntax--elixir .syntax--constant.syntax--numeric,
+.syntax--source.syntax--elixir .syntax--constant.syntax--definition {
+  color: #61afef;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--definition,
+.syntax--source.syntax--elixir .syntax--variable.syntax--anonymous {
+  color: #c678dd;
+}
+.syntax--source.syntax--elixir .syntax--parameter.syntax--variable.syntax--function {
+  color: #d19a66;
+  font-style: italic;
+}
+.syntax--source.syntax--elixir .syntax--quoted {
+  color: #98c379;
+}
+.syntax--source.syntax--elixir .syntax--keyword.syntax--special-method,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--section,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--source.syntax--empty {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--readwrite.syntax--module .syntax--punctuation {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--regexp.syntax--section,
+.syntax--source.syntax--elixir .syntax--regexp.syntax--string {
+  color: #be5046;
+}
+.syntax--source.syntax--elixir .syntax--separator,
+.syntax--source.syntax--elixir .syntax--keyword.syntax--operator {
+  color: #d19a66;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--constant {
+  color: #e5c07b;
+}
+.syntax--source.syntax--elixir .syntax--array,
+.syntax--source.syntax--elixir .syntax--scope,
+.syntax--source.syntax--elixir .syntax--section {
+  color: #828997;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--ts .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--flow .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--ng.syntax--interpolation {
+  color: #e06c75;
+}
+.syntax--ng.syntax--interpolation.syntax--begin,
+.syntax--ng.syntax--interpolation.syntax--end {
+  color: #61afef;
+}
+.syntax--ng.syntax--interpolation .syntax--function {
+  color: #e06c75;
+}
+.syntax--ng.syntax--interpolation .syntax--function.syntax--begin,
+.syntax--ng.syntax--interpolation .syntax--function.syntax--end {
+  color: #61afef;
+}
+.syntax--ng.syntax--interpolation .syntax--bool {
+  color: #d19a66;
+}
+.syntax--ng.syntax--interpolation .syntax--bracket {
+  color: #abb2bf;
+}
+.syntax--ng.syntax--pipe,
+.syntax--ng.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--ng.syntax--tag {
+  color: #56b6c2;
+}
+.syntax--ng.syntax--attribute-with-value .syntax--attribute-name {
+  color: #e5c07b;
+}
+.syntax--ng.syntax--attribute-with-value .syntax--string {
+  color: #c678dd;
+}
+.syntax--ng.syntax--attribute-with-value .syntax--string.syntax--begin,
+.syntax--ng.syntax--attribute-with-value .syntax--string.syntax--end {
+  color: #abb2bf;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--php .syntax--class.syntax--bracket {
+  color: #abb2bf;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+</style>
+        </head>
+        <body class='markdown-preview' data-use-github-style><h1 id="covid-19-data-resources">COVID-19 Data Resources</h1>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>National Institutes of Health NIH</li>
+<li>Centers for Disease Control and Prevention CDC</li>
+<li>World Health Organization WHO</li>
+<li>Collaborations, coalitions, tools &amp; portals</li>
+</ul>
+<hr>
+<h2 id="national-institutues-of-health-nih">National Institutues of Health NIH</h2>
+<p>National Institutes of Health [NIH] 
+<a href="https://www.nih.gov/health-information/coronavirus">https://www.nih.gov/health-information/coronavirus</a>
+Resources, funding information, news releases</p>
+<h3 id="covid-19-treatment-guidelines">COVID 19 Treatment Guidelines</h3>
+<p><a href="https://covid19treatmentguidelines.nih.gov/">https://covid19treatmentguidelines.nih.gov/</a>
+..developed to inform clinicians how to care for patients with COVID-19. Because clinical information about the optimal management of COVID-19 is evolving quickly, these Guidelines will be updated frequently as published data and other authoritative information becomes available.</p>
+<h3 id="national-institute-of-allergy-and-infectious-diseases---coronoviruses">National Institute of Allergy and Infectious Diseases - Coronoviruses</h3>
+<p><a href="https://www.niaid.nih.gov/diseases-conditions/coronaviruses">https://www.niaid.nih.gov/diseases-conditions/coronaviruses</a>
+Overview, information for researchers, clinical research</p>
+<h3 id="national-library-of-medicine">National Library of Medicine</h3>
+<p><a href="https://www.nlm.nih.gov/index.html#Novel_Coronavirus">https://www.nlm.nih.gov/index.html#Novel_Coronavirus</a>
+Get rapid access to the NLM’s GenBank sequence data at the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) data hub.   <a href="https://bit.ly/2WdxwpQ">https://bit.ly/2WdxwpQ</a></p>
+<h3 id="clinical-trials-related-to-the-coronavirus-disease">Clinical Trials related to the coronavirus disease</h3>
+<p>A preformulated search of ClinicalTrials.gov that includes multiple synonyms for COVID-19 and returns registered clinical studies related to the coronavirus disease.
+<a href="https://clinicaltrials.gov/ct2/results?cond=%22wuhan+coronavirus%22">https://clinicaltrials.gov/ct2/results?cond=%22wuhan+coronavirus%22</a></p>
+<h3 id="litcovid">LitCOVID</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/research/coronavirus/">https://www.ncbi.nlm.nih.gov/research/coronavirus/</a>
+LitCovid is a curated literature hub for tracking up-to-date scientific information about the 2019 novel Coronavirus. It is the most comprehensive resource on the subject, providing a central access to 4112 (and growing) relevant articles in PubMed. The articles are updated daily and are further categorized by different research topics and geographic locations for improved access. You can read more at Chen et al. Nature (2020) and download our data here.</p>
+<h3 id="covid-19-sars-cov-2-preprints-from-medrxiv-and-biorxiv">COVID-19 SARS-CoV-2 preprints from medRxiv and bioRxiv</h3>
+<p><a href="https://connect.biorxiv.org/relate/content/181">https://connect.biorxiv.org/relate/content/181</a></p>
+<h3 id="covid-19-open-research-dataset-cord-19">COVID-19 Open Research Dataset (CORD-19)</h3>
+<p><a href="https://pages.semanticscholar.org/coronavirus-research">https://pages.semanticscholar.org/coronavirus-research</a>
+...researchers and leaders from the Allen Institute for AI, Chan Zuckerberg Initiative (CZI), Georgetown University’s Center for Security and Emerging Technology (CSET), Microsoft, and the National Library of Medicine (NLM) at the National Institutes of Health have partnered to... prepare and distribute the COVID-19 Open Research Dataset (CORD-19), a free resource of over 51,000 scholarly articles, including over 40,000 with full text, about COVID-19 and the coronavirus family of viruses for use by the global research community.</p>
+<p>This dataset is intended to mobilize researchers to apply recent advances in natural language processing to generate new insights in support of the fight against this infectious disease. The corpus will be updated weekly as new research is published in peer-reviewed publications and archival services like bioRxiv, medRxiv, and others.</p>
+<p>CORD-19 Explorer is a quick and easy way to search the CORD-19 corpus. The query capabilities of the Explorer are quite simple. If you're trying to do a more comprehensive search, many additional tools are listed and linked. </p>
+<p>CoViz allows you to discover associations between concepts appearing in the dataset. </p>
+<p><strong>Participate in the CORD-19 Challenge</strong>
+<strong>Kaggle</strong> <a href="https://www.kaggle.com/">https://www.kaggle.com/</a> is hosting the COVID-19 Open Research Dataset Challenge, a series of important questions designed to inspire the community to use CORD-19 to find new insights about the COVID-19 pandemic including the natural history, transmission, and diagnostics for the virus, management measures at the human-animal interface, lessons from previous epidemiological studies, and more.</p>
+<p><strong>Disaster Information Management Research Center</strong>
+<a href="https://disasterinfo.nlm.nih.gov/">https://disasterinfo.nlm.nih.gov/</a></p>
+<p><strong>Disaster Lit includes links to grey literature from non-commercial sources.</strong> 
+Disaster Lit  prestructured COVID-19 search:
+<a href="https://disasterinfo.nlm.nih.gov/search/?q=(coronavirus%20AND%20novel)%20OR%20covid%2019">https://disasterinfo.nlm.nih.gov/search/?q=(coronavirus%20AND%20novel)%20OR%20covid%2019</a></p>
+<h3 id="national-center-for-advancing-translational-sciences-ncats">National Center for Advancing Translational Sciences NCATS</h3>
+<p><a href="https://ncats.nih.gov/">https://ncats.nih.gov/</a></p>
+<p>Open Funding Opportunities: Funding Opportunities: Notices of Special Interest to Advance COVID-19 Research
+NCATS recently issued several notices of special interest that highlight the urgent need for research on the 2019 novel coronavirus (SARS-CoV-2) and the disease it causes
+NCATS Expertise &amp; Resources <a href="https://ncats.nih.gov/expertise">https://ncats.nih.gov/expertise</a>
+Includes NCATS Pharmaceutical Collection, Preclinical and Clinical Toolboxes</p>
+<hr>
+<h2 id="center-for-disease-control-and-prevention-cdc">Center for Disease Control and Prevention CDC</h2>
+<p><strong>Centers for Disease Control and Prevention (CDC)   Coronavirus Disease 2019 (COVID-19)</strong></p>
+<p><a href="https://www.cdc.gov/coronavirus/2019-ncov/">https://www.cdc.gov/coronavirus/2019-ncov/</a>
+Consumer health, information for healthcare professionals, care for patients, interim guidance for laboratories, support for health departments: states, tribes, localities &amp; territories
+Cases, Data, Surveillance <a href="https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/index.html">https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/index.html</a></p>
+<p><a href="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html">https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/index.html</a>
+This CDC report provides a weekly summary and interpretation of key indicators that have been adapted to track the COVID-19 pandemic in the United States.  While influenza-like-illness (ILI) declined, it is still elevated and laboratory confirmed COVID-19 activity continues to increase as do COVID-19 severity indicators (hospitalizations and deaths).</p>
+<h3 id="national-center-for-data-to-health-cd2h-covid-19-resources">National Center for Data to Health [CD2H] COVID 19 Resources</h3>
+<p><a href="https://covid.cd2h.org/">https://covid.cd2h.org/</a>
+CD2H has created the National COVID Cohort Collaborative (N3C), a centralized, secure, limited access portal to access COVID-19 clinical data.
+<a href="https://covid.cd2h.org/N3C">https://covid.cd2h.org/N3C</a></p>
+<p>COVIDsearch provides unified searching across available research preprints, publications, and clinical trial information. <a href="https://covid.cd2h.org/covid_search">https://covid.cd2h.org/covid_search</a>
+and COVID Outbreak Information, Clinical Trials, Case Report Forms and Phenotyping Standards, &amp; Flatten the Curve - current information about how to take action, stay informed, and spread the word.    </p>
+<p><strong>National Center for Health Statistics (NCHS)</strong> 
+ <a href="https://www.cdc.gov/nchs/nchs_for_you/researchers.htm">https://www.cdc.gov/nchs/nchs_for_you/researchers.htm</a>
+a rich source of data for researchers, teachers, and students who want to perform data analysis. This page compiles key sources of information found on the NCHS website for those who are interested in analysis of NCHS data as well as documentation and methodology of NCHS data systems.</p>
+<hr>
+<h2 id="world-health-organization">World Health Organization</h2>
+<p><a href="https://www.who.int/">https://www.who.int/</a>
+Coronavirus disease (COVID-19) Situation dashboard</p>
+<p><a href="https://covid19.who.int/">https://covid19.who.int/</a>
+This interactive dashboard/map provides the latest global numbers and numbers by country of COVID-19 cases on a daily basis.
+<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">https://www.who.int/emergencies/diseases/novel-coronavirus-2019</a>
+Rolling updates on COVID-19, travel advice, strategy &amp; preparedness</p>
+<h3 id="who-covid-19-database">WHO COVID-19 Database</h3>
+<p><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/global-research-on-novel-coronavirus-2019-ncov">https://www.who.int/emergencies/diseases/novel-coronavirus-2019/global-research-on-novel-coronavirus-2019-ncov</a>
+The global literature cited in the WHO COVID-19 database is updated daily (Monday through Friday) from searches of bibliographic databases, hand searching, and the addition of other expert-referred scientific articles. Particular emphasis is placed on identifying literature from around the world. Site also links to International Clinical Trials Registry and additional resources.
+International Clinical Trials Registry Platform (WHO ICTRP)
+<a href="https://www.who.int/ictrp/en/">https://www.who.int/ictrp/en/</a></p>
+<hr>
+<h2 id="collaborations-coalitions-tools--portals">Collaborations, coalitions, tools &amp; portals</h2>
+<h3 id="amazon-web-services-aws-covid-19-data-lake">Amazon Web Services (AWS) COVID-19 data lake</h3>
+<p><a href="https://aws.amazon.com/blogs/big-data/a-public-data-lake-for-analysis-of-covid-19-data/">https://aws.amazon.com/blogs/big-data/a-public-data-lake-for-analysis-of-covid-19-data/</a>
+<a href="https://dj2taa9i652rf.cloudfront.net/">https://dj2taa9i652rf.cloudfront.net/</a>
+a centralized repository of up-to-date and curated datasets on or related to the spread and characteristics of the novel corona virus (SARS-CoV-2) and its associated illness, COVID-19. Globally, there are several efforts underway to gather this data, and we are working with partners to make this crucial data freely available and keep it up-to-date. Hosted on the AWS cloud, we have seeded our curated data lake with COVID-19 case tracking data from Johns Hopkins and The New York Times, hospital bed availability from Definitive Healthcare, and over 45,000 research articles about COVID-19 and related coronaviruses from the Allen Institute for AI. We will regularly add to this data lake as other reliable sources make their data publicly available.</p>
+<h3 id="aristotle-covid-19-dashboard---aristotle-labs">Aristotle COVID-19 Dashboard - Aristotle Labs</h3>
+<p><a href="https://labs.aristotlemetadata.com/#/covid/graph">https://labs.aristotlemetadata.com/#/covid/graph</a>
+.. an interactive display of data about the 2020 COVID-19 pandemic using data published by the European Centre for Disease Control. This data has been enhanced with metadata from an Aristotle Metadata Registry. Hover over the dashboard controls or any underlined text to see more information about data, classifications or glossary definitions. Includes details about how the graph was generated. 
+Cochrane Library _ Coronavirus (COVID-19)<br><a href="https://www.cochrane.org/coronavirus-covid-19-cochrane-resources-and-news">https://www.cochrane.org/coronavirus-covid-19-cochrane-resources-and-news</a>
+Content relating to the coronavirus (COVID-19) pandemic and the various related activities that Cochrane is undertaking in response.</p>
+<h3 id="covid-19-healthcare-coalition">COVID 19 Healthcare Coalition</h3>
+<p><a href="https://c19hcc.org/">https://c19hcc.org/</a>
+a private-sector led response to the COVID-19 pandemic that brings together healthcare organizations, technology firms, nonprofits, academia, and startups. 
+Includes tools, datasets, best practices, prototype data visualizations, etc.
+Resource Library 
+<a href="https://c19hcc.org/resource-library">https://c19hcc.org/resource-library</a></p>
+<h3 id="dimensions-from-digital-science">Dimensions (from Digital Science)</h3>
+<p><a href="https://www.dimensions.ai/news/dimensions-is-facilitating-access-to-covid-19-research/?utm_source=pardot">https://www.dimensions.ai/news/dimensions-is-facilitating-access-to-covid-19-research/?utm_source=pardot</a>
+Dimensions facilitates access to COVID-19 research by collating all COVID-19 related published articles, preprints, datasets and clinical trials from Dimensions in one file, updated daily, and free for anyone to access. We hope that this will help the research community to stay up to date in this fast-moving situation, and greatly reduce the time that would otherwise be required to collate this information from many disparate sources.
+Drug Repurposing Hub<br><a href="https://clue.io/repurposing">https://clue.io/repurposing</a></p>
+<p>To accelerate drug development, researchers from the Broad Institute’s Cancer Program, Center for the Development of Therapeutics, and Connectivity Map project have created the Drug Repurposing Hub, an open-access repository of more than 6,000 compounds, many of which have been FDA approved. The Broad’s Drug Repurposing Hub is open-access. Any researcher can log-in, look up, and download the information contained in the Hub. They can search based on the characteristics of a specific compound or drug target.</p>
+<h3 id="earth20-covid-rapid-response">Earth2.0 COVID Rapid Response</h3>
+<p><a href="https://earth2-covid.ucsd.edu">https://earth2-covid.ucsd.edu</a>
+consists of four pillars: CoRESPOND, our emergency response network for the frontline, OASIS a crowd-force platform to fight COVID, HomeBound an App to manage COVID at home, and dataCORE a system to learn &amp; innovate with living data.
+Clinicians, Staff, Researchers and others at the frontline need resources, accurate and timely information and rapid innovation to support their heroic efforts. Their needs range from emerging knowledge of COVID management to equipment, from translation to innovation.</p>
+<p>Earth2.0 CO-RESPOND is a UCSD-based international initiative that provides rapid response solutions to front line clinicians. <a href="https://earth2-covid.ucsd.edu/corespond">https://earth2-covid.ucsd.edu/corespond</a></p>
+<h3 id="covid-19-data-portal">COVID-19 Data Portal</h3>
+<p><a href="https://www.covid19dataportal.org/">https://www.covid19dataportal.org/</a>
+European Molecular Biology Laboratory - European Bioinformatics Institute [EMBL-EBI] and partners have set up the COVID-19 Data Portal, which will bring together relevant datasets submitted to EMBL-EBI and other major centres for biomedical data. The COVID-19 Data Portal will enable researchers to upload, access and analyse COVID-19 related reference data including Sequences, Expression, Proteins, Structures, &amp; Literature.</p>
+<h3 id="covid-19-open-research-data-on-figshare">COVID 19 Open Research Data on Figshare</h3>
+<p><a href="https://nih.figshare.com">https://nih.figshare.com</a>
+<a href="https://covid19.figshare.com">https://covid19.figshare.com</a></p>
+<h3 id="github--covid-19-repo-data">github / covid-19-repo-data</h3>
+<p><a href="http://www.github.com/github/covid-19-repo-data">www.github.com/github/covid-19-repo-data</a>
+Data archive of identifiable COVID-19 related public projects on GitHub 
+Types of projects: Datasets, Visualizations, Analysis, Modeling scenarios</p>
+<h3 id="global-initiative-on-sharing-all-influenza-data">Global Initiative on Sharing All Influenza Data</h3>
+<p> <a href="https://www.gisaid.org/">https://www.gisaid.org/</a>
+Created as an alternative to the public domain sharing model, GISAID's sharing mechanism took into account the concerns of Member States by providing a publicly accessible database designed by scientist for scientist, to improve the sharing of influenza data. 
+ Sharing of all influenza virus sequences, related clinical and epidemiological data associated with human viruses, and geographical as well as species-specific data associated with avian and other animal viruses.</p>
+<h3 id="visualization-of-genomic-epidemiology-of-novel-coronavirus---global-subsampling-data-from-gisaid">Visualization of genomic epidemiology of novel coronavirus - global subsampling data from GISAID:</h3>
+<p><a href="https://nextstrain.org/ncov/global">https://nextstrain.org/ncov/global</a></p>
+<h3 id="harvard-dataverse-resources-for-covid-19">Harvard Dataverse Resources for COVID-19</h3>
+<p><a href="https://dataverse.harvard.edu/dataverse/2019ncov">https://dataverse.harvard.edu/dataverse/2019ncov</a>
+Since Feb 7 2020 -  50 COVID19 datasets - includes social science studies, political science studies  - China Data Lab - Novel Coronavirus Global Research - cloud computing resources, creating &amp; sharing analytical workflows, workflows related to literature analysis, workflows related to the COVID-19 statistics anlaysis.</p>
+<h3 id="institute-for-disease-modeling-idm-infohub">Institute for Disease Modeling [IDM] InfoHub</h3>
+<p><a href="https://covid.idmod.org/#/Home">https://covid.idmod.org/#/Home</a>
+The Institute for Disease Modeling’s (IDM) InfoHub contains epidemiological information and analyses about COVID-19 performed in the context of rapidly changing and dynamic circumstances. Critical information will be disseminated as quickly as possible.</p>
+<h3 id="the-institute-for-health-metrics-and-evaluation-ihmecovid-19-resources">The Institute for Health Metrics and Evaluation (IHME)COVID-19 Resources</h3>
+<p><a href="http://www.healthdata.org/covid">http://www.healthdata.org/covid</a>
+IHME is an independent global health research center at the University of Washington.</p>
+<p>IHME's COVID-19 projections were developed in response to requests from the University of Washington School of Medicine and other US hospital systems and state governments working to determine when COVID-19 would overwhelm their ability to care for patients. The forecasts show demand for hospital services, including the availability of ventilators, general hospital beds, and ICU beds, as well as daily and cumulative deaths due to COVID-19.</p>
+<h3 id="lawrence-livermore-national-laboratory-llnl---covid-19-research-and-response">Lawrence Livermore National Laboratory LLNL - COVID-19 Research and Response</h3>
+<p><a href="https://www.llnl.gov/coronavirus">https://www.llnl.gov/coronavirus</a>
+3D protein structure predictions for the novel coronavirus 
+<a href="https://www.llnl.gov/news/lawrence-livermore-researchers-release-3d-protein-structure-predictions-novel-coronavirus">https://www.llnl.gov/news/lawrence-livermore-researchers-release-3d-protein-structure-predictions-novel-coronavirus</a><br>The most current 3D models can be obtained by contacting the LLNL Biosecurity Center. <a href="mailto:biosecurity@listserv.llnl.gov">biosecurity@listserv.llnl.gov</a></p>
+<h3 id="covid-19-datasets">COVID-19 Datasets</h3>
+<p><a href="https://about.lens.org/covid-19/">https://about.lens.org/covid-19/</a>
+The Lens is an open global cyberinfrastructure to make the innovation system more efficient and fair, more transparent and inclusive.The Lens has assembled free and open datasets of patent documents, scholarly research works metadata and biological sequences from patents, and deposited them in a machine-readable and explorable form.</p>
+<h3 id="mathematica---covid-19-curated-data-modeling-policy-resources">Mathematica - COVID-19 Curated Data, Modeling, Policy Resources</h3>
+<p><a href="https://www.mathematica.org/features/covid-19-curated-data-modeling-and-policy-resources">https://www.mathematica.org/features/covid-19-curated-data-modeling-and-policy-resources</a>
+Data sources, analytic tools, policy options, and other resources: a preliminary list organized by Mathematica from publicly available resources.</p>
+<h3 id="mit-ai-cures---open-source-data">MIT AI Cures - Open Source Data</h3>
+<p><a href="https://www.aicures.mit.edu/data">https://www.aicures.mit.edu/data</a>
+We are a group of machine learning and life science researchers who are collaborating on developing machine learning methods for finding promising antiviral molecules for COVID-19 and other emerging pathogens. We are excited to encourage experimentation and collaboration in this space. To that end, we are working with our collaborators to open-source data related to the SARS-CoV-2 effort. All our data may be found here and are summarized below.</p>
+<h3 id="midas-online-portal-for-covid-19-modeling-research">MIDAS Online Portal for COVID-19 Modeling Research</h3>
+<p><a href="https://midasnetwork.us/covid-19/">https://midasnetwork.us/covid-19/</a>
+Contains data, information, and resources for COVID-19 modeling research MIDAS is a global network of scientists and practitioners from academia, industry, government, and non-governmental agencies, who develop and use computational, statistical and mathematical models to improve the understanding of infectious disease dynamics as it relates to pathogenesis, transmission, effective control strategies, and forecasting. MIDAS supports open science practices by encouraging members to collaborate by sharing information, datasets, models, workflows, and research insights to improve global preparedness for, and response against infectious disease threats.</p>
+<h3 id="observational-health-data-science--informatics--covid-19-updates">Observational Health Data Science &amp; Informatics  COVID-19 Updates</h3>
+<p><a href="https://www.ohdsi.org/">https://www.ohdsi.org/</a>
+<a href="https://www.ohdsi.org/covid-19-updates/">https://www.ohdsi.org/covid-19-updates/</a>
+The Observational Health Data Sciences and Informatics (or OHDSI, pronounced "Odyssey") program is a multi-stakeholder, interdisciplinary collaborative to bring out the value of health data through large-scale analytics. All our solutions are open-source.</p>
+<h3 id="the-coronavirus-open-citations-dataset">The Coronavirus Open Citations Dataset</h3>
+<p><a href="https://opencitations.github.io/coronavirus/">https://opencitations.github.io/coronavirus/</a>
+The Coronavirus Open Citations Dataset curated by OpenCitations currently contains (as of 20 April 2020) information about 124,295 citations and about the 42,213 citing or cited articles involved in these citations. The full dataset, used for this visualization, is stored in JSON format on Zenodo under a Creative Commons CC0 waiver, to enable anyone to use these data for any purpose.
+OSF Coronavirus Outbreak Research Collection
+<a href="https://osf.io/collections/coronavirus/discover">https://osf.io/collections/coronavirus/discover</a></p>
+<p>...aggregates COVID-19 outputs and improves the discoverability and reuse of related work, including SARS, SARS-CoV, MERS, and MERS-CoV. In February and March 2020, more than 400 projects were created on OSF related to COVID-19 and more than 11,000 files of data and other research materials were added to those projects. Anyone can submit their OSF-hosted research.</p>
+<h3 id="pandemic-response-commons-consotrium-prcc">Pandemic Response Commons Consotrium (PRCC)</h3>
+<p><a href="http://pandemicresponsecommons.org/">http://pandemicresponsecommons.org/</a>
+...an emerging private-public partnership to develop and operate an open, standards-based data commons for pandemic response that is designed to be part of broader data ecosystem that supports researchers, public health officials, and local and state decision makers working on the COVID-19 pandemic. The PRCC has set up a general data commons for COVID-19 that will be available to the public shortly. It has set up an instance of this for the greater Chicago region called the Chicagoland COVID-19 Commons.The data ecosystem is being built using a proven, open source data platform called Gen3. </p>
+<h3 id="primer-covid-19-dashboard">Primer COVID-19 Dashboard</h3>
+<p><a href="https://covid19primer.com/dashboard">https://covid19primer.com/dashboard</a>
+Quickly understand the scientific progress in the fight against COVID-19. Using the most advanced NLP algorithms, read summaries and discover trends in the latest research papers and the conversations around them. Every 24hrs.</p>
+<h3 id="covid-19--research-pass">COVID-19  Research Pass</h3>
+<p><a href="https://covid19.readcube.com">https://covid19.readcube.com</a>
+In collaboration with leading scholarly publishers, the COVID-19 Research Pass enables instant full text access to the latest COVID-19 research literature from participating publishers and via Open Access. Additionally, the program offers API access to millions of full text research articles for text and data mining purposes. More information about the program can be found here. </p>
+<h3 id="simply-analytics---covid-19-data">Simply Analytics - COVID-19 Data</h3>
+<p><a href="https://app.simplyanalytics.com/">https://app.simplyanalytics.com/</a>
+This resource is licensed by the Library; connect with vpn activated. Access limited to 5 simultaneous users. Try again later if refused.
+SimplyAnalytics is a web-based mapping application that lets users quickly create professional-quality thematic maps and reports using demographic, business, and marketing data for the United States.
+COVID-19 Data is Now Available in SimplyAnalytics:This data can be combined with our demographic and health data variables to identify areas with vulnerable residents, such as the elderly, people with respiratory illnesses, and smokers.
+<a href="https://simplyanalytics.com/2020/04/07/covid-19-data-is-now-available-in-simplyanalytics/">https://simplyanalytics.com/2020/04/07/covid-19-data-is-now-available-in-simplyanalytics/</a></p>
+<h3 id="vivli--center-for-global-clinical-research-data">Vivli  Center for Global Clinical Research Data</h3>
+<p><a href="https://vivli.org/">https://vivli.org/</a>
+April 13 2020 ...d-wise and Vivli are partnering to accelerate COVID-19 data sharing.  d-wise will waive fees to anonymize COVID-19 studies made available through the Vivli platform. Vivli launched its COVID-19 portal last week and announced it will waive fees to share, archive and access all of its clinical trials related to COVID-19.</p>
+<p>Coronavirus Disease Research Community - COVID-19   <a href="https://zenodo.org/communities/covid-19/?page=1&amp;size=20">https://zenodo.org/communities/covid-19/?page=1&amp;size=20</a>                  This community collects research outputs that may be relevant to the Coronavirus Disease (COVID-19) or the SARS-CoV-2. Scientists are encouraged to upload their outcomes in this collection to facilitate sharing and discovery of information. </p>
+<hr>
+<h2 id="academic-sites">Academic Sites</h2>
+<h3 id="uc-san-diego-health---coronovirus-information-httpshealthucsdeducoronaviruspagesdefaultaspx">UC San Diego Health - Coronovirus Information <a href="https://health.ucsd.edu/coronavirus/pages/default.aspx">https://health.ucsd.edu/coronavirus/pages/default.aspx</a></h3>
+<p>Information for patients &amp; visitors
+Information for UCSD students
+Information for Health Professionals
+Information for Staff (login required)
+News
+Videos</p>
+<h3 id="san-diego-county-public-health-data">San Diego county public health data</h3>
+<p><a href="https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/status.html">https://www.sandiegocounty.gov/content/sdc/hhsa/programs/phs/community_epidemiology/dc/2019-nCoV/status.html</a></p>
+<h3 id="san-diego-covid-research-enterprise-network-screen">San Diego Covid REsearch Enterprise Network (SCREEN)</h3>
+<p><a href="https://screencovid.info">https://screencovid.info</a>
+...a grassroots-driven, mesa-wide, multi-institutional effort with researchers and clinicians from UCSD, Salk, Scripps, SDSU, Sanford-Burnham, LIAI and Rady’s Children Hospital to provide the community with Covid-19 information and funding announcements, spark and coordinate local research collaborations and connect immediate local problems with rapid solutions.</p>
+<h3 id="uc-san-francisco-library---covid-19-research-and-information-resources">UC San Francisco Library - COVID-19 Research and Information Resources</h3>
+<p> <a href="https://guides.ucsf.edu/COVID19">https://guides.ucsf.edu/COVID19</a></p>
+<h3 id="johns-hopkins-university-dashboard-data">Johns Hopkins University dashboard data</h3>
+<p>the data repository for the 2019 Novel Coronavirus Visual Dashboard operated by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). Also, Supported by ESRI Living Atlas Team and the Johns Hopkins University Applied Physics Lab (JHU APL).
+<a href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a></p>
+<hr>
+<h3 id="data-sources">Data Sources:</h3>
+<ul>
+<li><strong>World Health Organization (WHO):</strong> <a href="https://www.who.int/">https://www.who.int/</a></li>
+<li>DXY.cn. <strong>Pneumonia. 2020</strong>. <a href="http://3g.dxy.cn/newh5/view/pneumonia">http://3g.dxy.cn/newh5/view/pneumonia</a>.</li>
+<li><strong>BNO News</strong>: <a href="https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/">https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/</a></li>
+<li><strong>National Health Commission of the People’s Republic of China (NHC)</strong>:
+<a href="http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml">http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml</a></li>
+<li><strong>China CDC (CCDC):</strong> <a href="http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm">http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm</a></li>
+<li><strong>Hong Kong Department of Health:</strong> <a href="https://www.chp.gov.hk/en/features/102465.html">https://www.chp.gov.hk/en/features/102465.html</a></li>
+<li><strong>Macau Government:</strong> <a href="https://www.ssm.gov.mo/portal/">https://www.ssm.gov.mo/portal/</a></li>
+<li><strong>Taiwan CDC:</strong> <a href="https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0">https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0</a></li>
+<li><strong>US CDC:</strong> <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">https://www.cdc.gov/coronavirus/2019-ncov/index.html</a></li>
+<li><strong>Government of Canada:</strong> <a href="https://www.canada.ca/en/public-health/services/diseases/coronavirus.html">https://www.canada.ca/en/public-health/services/diseases/coronavirus.html</a></li>
+<li><strong>Australia Government Department of Health:</strong> <a href="https://www.health.gov.au/news/coronavirus-update-at-a-glance">https://www.health.gov.au/news/coronavirus-update-at-a-glance</a></li>
+<li><strong>European Centre for Disease Prevention and Control (ECDC):</strong> <a href="https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases">https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases</a></li>
+<li><strong>Ministry of Health Singapore (MOH):</strong> <a href="https://www.moh.gov.sg/covid-19">https://www.moh.gov.sg/covid-19</a></li>
+<li><strong>Italy Ministry of Health:</strong> <a href="http://www.salute.gov.it/nuovocoronavirus">http://www.salute.gov.it/nuovocoronavirus</a></li>
+<li><strong>1Point3Arces:</strong> <a href="https://coronavirus.1point3acres.com/en">https://coronavirus.1point3acres.com/en</a></li>
+<li><strong>WorldoMeters:</strong>
+<a href="https://www.worldometers.info/coronavirus/">https://www.worldometers.info/coronavirus/</a></li>
+<li><strong>COVID Tracking Project:</strong> <a href="https://covidtracking.com/data">https://covidtracking.com/data</a>. (US Testing and Hospitalization Data. We use the maximum reported value from "Currently" and "Cumulative" Hospitalized for our hospitalization number reported for each state.)</li>
+<li><strong>US county-level tracking</strong> map:<a href="https://coronavirus.jhu.edu/us-map">https://coronavirus.jhu.edu/us-map</a></li>
+<li><strong>New York University Health Sciences Library  2019 Novel Coronavirus Resources</strong>
+<a href="https://hslguides.med.nyu.edu/2019Coronavirus">https://hslguides.med.nyu.edu/2019Coronavirus</a>
+Including<br>ECRI (Emergency Care Research Institute) -- COVID-19 Resource Center<br>ECRI has developed this resource center to help hospitals, ambulatory care, and aging care facilities protect healthcare workers, residents, and patients
+and 
+New York City Guidance on Covid 19<br>Recent Guidance and NYC Case Data - includes Fact Sheets in multiple languages             </li>
+<li><strong>Imperial College London - MRC Centre for Global Infectious Disease Analysis</strong>
+modelling the spread and impact COVID-19 and whose data are informing current UK government policy on the pandemic.
+COVID 19 Scientific Resources
+<a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/covid-19-scientific-resources/">https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/covid-19-scientific-resources/</a>
+access to code, data and tools developed by the Imperial College COVID-19 Response Team.
+<a href="http://www.imperial.ac.uk/news/196234/covid-19-imperial-researchers-model-likely-impact/">http://www.imperial.ac.uk/news/196234/covid-19-imperial-researchers-model-likely-impact/</a></li>
+</ul></body>
+      </html>
